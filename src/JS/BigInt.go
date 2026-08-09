@@ -5,7 +5,7 @@ import (
 
 func toBigInt(v any) *big.Int {
 	if val, ok := v.(gopurs_runtime.Value); ok {
-		return val.Item.(*big.Int)
+		return val.PtrVal().(*big.Int)
 	}
 	return v.(*big.Int)
 }
